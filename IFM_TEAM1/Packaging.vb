@@ -4,7 +4,7 @@ Option Strict On
 Option Explicit On
 
 '222133448 , Marabele PS
-Public Class Packaging
+Public MustInherit Class Packaging
     'variable declaration 
     Private _type As String
 
@@ -24,6 +24,6 @@ Public Class Packaging
     End Property
 
     ' the polymorphic function 
-
+    Public MustOverride Function zeroWaste() As Double
 
 End Class

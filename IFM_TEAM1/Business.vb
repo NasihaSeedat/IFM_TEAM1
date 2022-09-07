@@ -25,8 +25,7 @@ Public Class Business
 
     Public Sub New()
 
-        _Sustainability = New Sustainability()
-        _Packaging = New Packaging()
+
 
 
     End Sub

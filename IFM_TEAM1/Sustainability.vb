@@ -48,6 +48,8 @@ Public Class Sustainability
     Public Function CalcSustainabilityLevel(ByVal NumSustainableMaterials As Integer, ByVal TotalSustainableMaterials As Integer) As Double
 
         _SustainabilityLevel = (NumSustainableMaterials / TotalSustainableMaterials) * 100
+
+        ' Math.Round rounds off to the nearest integer
         _SustainabilityLevel = Math.Round(_SustainabilityLevel)
 
 

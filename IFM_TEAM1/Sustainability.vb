@@ -3,15 +3,7 @@ Option Infer Off
 Option Strict On
 Option Explicit On
 
-' ***************************************************************** 
-' Team Number: 1
-' Team Member 1 Details: Surname, Initials (Student #) 
-' Team Member 2 Details: Surname, Initials (Student #) 
-' Team Member 3 Details: Surname, Initials (Student #) 
-' Team Member 4 Details: e.g. Smith, J (202000001) 
-' Practical: Team Project 
-' Class name: Sustainability 
-' *****************************************************************
+'222118746 , Tumisho
 
 Public Class Sustainability
 

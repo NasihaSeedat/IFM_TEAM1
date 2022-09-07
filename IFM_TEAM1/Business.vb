@@ -17,14 +17,15 @@ Public Class Business
     Private _Name As String
     Private _Packaging As Packaging
     Private _SustainabilityRating As Integer
+    Private _Sustainability As Sustainability
 
     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     '''''''''''''''''''''''''Constructors'''''''''''''''''''''''''''''''
     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-    Public Sub New(ByVal _SustainabilityLevel As Double)
+    Public Sub New()
 
-        DetRating(_SustainabilityLevel)
+        _Sustainability = New Sustainability()
 
     End Sub
 
@@ -59,30 +60,40 @@ Public Class Business
         End Set
     End Property
 
+    Public Property Sustainability As Sustainability
+        Get
+            Return _Sustainability
+        End Get
+        Set(value As Sustainability)
+            _Sustainability = value
+        End Set
+    End Property
 
     '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     '''''''''''''''''''''''''''''''''Methods'''''''''''''''''''''''''''''
     '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-    Public Function DetRating(ByVal _SustainabilityLevel As Double) As Integer
+    Public Function DetRating() As Integer
 
-        If (_SustainabilityLevel < 20) Then
+        Dim SustainabilityLevel As Double = _Sustainability.SustainabilityLevel
+
+        If (SustainabilityLevel < 20) Then
 
             _SustainabilityRating = 1
 
-        ElseIf (_SustainabilityLevel >= 20 And _SustainabilityLevel < 40) Then
+        ElseIf (SustainabilityLevel >= 20 And SustainabilityLevel < 40) Then
 
             _SustainabilityRating = 2
 
-        ElseIf (_SustainabilityLevel >= 40 And _SustainabilityLevel < 60) Then
+        ElseIf (SustainabilityLevel >= 40 And SustainabilityLevel < 60) Then
 
             _SustainabilityRating = 3
 
-        ElseIf (_SustainabilityLevel >= 60 And _SustainabilityLevel < 80) Then
+        ElseIf (SustainabilityLevel >= 60 And SustainabilityLevel < 80) Then
 
             _SustainabilityRating = 4
 
-        ElseIf (_SustainabilityLevel >= 80 And _SustainabilityLevel < 100) Then
+        ElseIf (SustainabilityLevel >= 80 And SustainabilityLevel < 100) Then
 
             _SustainabilityRating = 5
 

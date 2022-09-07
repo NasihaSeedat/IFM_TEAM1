@@ -15,7 +15,6 @@ Option Explicit On
 
 Public Class Sustainability
 
-    Private _Business As Business
     Private _SustainabilityLevel As Double
 
 
@@ -24,31 +23,13 @@ Public Class Sustainability
     '''''''''''''''''''''''''Constructors'''''''''''''''''''''''''''''''
     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-    Public Sub New(ByVal NumSustainableMaterials As Integer, ByVal TotalSustainableMaterials As Integer)
-
-        'Whe the Sustainability class is created, get the number of sustainable materials from user and
-        'the total sustainable materials from user
-        ' After that calculate the Sustainability level
-        ' After calculating the sustainability level create the Business object and feed it the sustainability level
-
-        CalcSustainabilityLevel(NumSustainableMaterials, TotalSustainableMaterials)
-
-        _Business = New Business(_SustainabilityLevel)
+    Public Sub New()
 
     End Sub
 
     '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     '''''''''''''''''''''''''''Property Methods''''''''''''''''''''''''
     '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-    Public Property Business As Business
-        Get
-            Return _Business
-        End Get
-        Set(value As Business)
-            _Business = value
-        End Set
-    End Property
 
     Public Property SustainabilityLevel As Double
         Get

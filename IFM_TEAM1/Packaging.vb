@@ -3,7 +3,27 @@ Option Infer Off
 Option Strict On
 Option Explicit On
 
-'add student number and name
-Public Class Packaging
+'222133448 , Marabele PS
+Public MustInherit Class Packaging
+    'variable declaration 
+    Private _type As String
+
+
+    ' the constructor'
+    Public Sub New()
+
+    End Sub
+    ' the property method '
+    Public Property type As String
+        Get
+            Return _type
+        End Get
+        Set(value As String)
+            _type = value
+        End Set
+    End Property
+
+    ' the polymorphic function 
+    Public MustOverride Function zeroWaste() As Double
 
 End Class

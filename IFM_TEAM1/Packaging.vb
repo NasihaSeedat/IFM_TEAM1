@@ -8,7 +8,6 @@ Public MustInherit Class Packaging
     'variable declaration 
     Private _type As String
 
-
     ' the constructor'
     Public Sub New()
 

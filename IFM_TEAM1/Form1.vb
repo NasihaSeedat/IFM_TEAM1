@@ -23,6 +23,7 @@ Public Class BusSustainability
         nBus = CInt(InputBox("How many Businesses are there?"))
         ReDim Preserve Business(nBus)
 
+        Dim type As Integer = 0
         'setting up grid
         grdSustain.Rows = nBus + 1
         grdSustain.Cols = 8
@@ -32,12 +33,24 @@ Public Class BusSustainability
         PlaceIG(0, 1, "Sustainability Level")
         PlaceIG(0, 2, "Rating")
         PlaceIG(0, 3, "Bio Waste")
-        PlaceIG(0, 4, "Bio Efficiency")
-        PlaceIG(0, 5, "Recycled Waste")
-        PlaceIG(0, 6, "Recycled Efficiency")
+        PlaceIG(0, 4, "Recycled Waste")
 
         For b As Integer = 1 To nBus
-            Business(b).Name = CStr("What is business " & CStr(b) & " name?")
+            Business(b) = New Business
+            Business(b).Name = CStr(InputBox("What is business " & CStr(b) & " name?"))
+            PlaceIG(b, 0, CStr(Business(b).Name))
+            type = CInt(InputBox("What type of material is the packaging" & vbNewLine & "1) Biodegradable" & vbNewLine & "2) Recyclable"))
+            Select Case type
+                Case 1
+                    Dim bio As Biodegradable = New Biodegradable
+                    Business(b).Packaging = bio
+                    Business(b).Packaging.type = "Biodegradable"
+                    bio.NumBioPackages = CInt(InputBox("How many Biodegradable packages?"))
+                    bio.BioMaterials = CInt(InputBox("How many overall Biodegradable materials?"))
+
+                Case 2
+                    Business(b).Packaging = New Recycled
+            End Select
         Next b
 
     End Sub

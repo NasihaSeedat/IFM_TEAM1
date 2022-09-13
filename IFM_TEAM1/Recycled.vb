@@ -10,7 +10,6 @@ Public Class Recycled
     Private _NumRecPackages As Integer  'Number of packages for this class
     Private _RecMaterials As Double 'Percentage of recycled materials
     Private _RecZeroRatio As Double 'Zero waste ratio
-    Private _RecEfficiency As String 'based on the zerowaste ratio
     Private Const _RecConstVal As Integer = 100  'constant value used for percentage calculation
 
     'CONSTRUCTORS
@@ -46,14 +45,6 @@ Public Class Recycled
         End Set
     End Property
 
-    Public Property RecEfficiency() As String
-        Get
-            Return _RecEfficiency
-        End Get
-        Set(value As String)
-            _RecEfficiency = value
-        End Set
-    End Property
 
     'METHODS
     Public Overrides Function ZeroWaste() As Double                      'Method that calculates the ratio of waste
@@ -61,19 +52,6 @@ Public Class Recycled
         Return _RecZeroRatio
     End Function
 
-    Public Function DetermineEfficiency(RecZeroRatio As Double) As String 'Using the ratio of waste to determine the recycling efficiency
-        If _RecZeroRatio < 49 Then
-            _RecEfficiency = "Low"
-        Else
-            If _RecZeroRatio >= 50 And _RecZeroRatio < 99 Then
-                _RecEfficiency = "Moderate"
-            Else
-                If _RecZeroRatio >= 100 Then
-                    _RecEfficiency = "High"
-                End If
-            End If
-        End If
-        Return RecEfficiency
-    End Function
+
 
 End Class

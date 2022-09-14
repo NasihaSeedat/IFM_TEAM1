@@ -16,7 +16,7 @@ Public Class Business
     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     Public Sub New()
-
+        _Sustainability = New Sustainability
     End Sub
 
     '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
